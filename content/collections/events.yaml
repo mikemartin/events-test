@@ -1,0 +1,7 @@
+title: Events
+template: events/show
+layout: layout
+mount: home
+revisions: false
+route: '/{slug}'
+sort_dir: asc

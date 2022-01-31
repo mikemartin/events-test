@@ -1,0 +1,19 @@
+<article class="max-w-6xl mx-auto px-3">
+    <header class="mx-auto max-w-xl text-center content">
+        <h1 class="mb-4">Events</h1>
+        <p>This is description of the type of content you would expect to read here on this blog.</p>
+    </header>
+    {{ events:upcoming collection="events" limit="10" }}
+    {{ date }}
+    {{ if no_results }}
+        No Results
+    {{ /if }}
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
+        {{ dates }}
+            <div class="{{ first ? 'md:col-span-2' : 'col-span-1' }}">
+                {{ partial:events/card oversized="{{ first ? 'true' : 'false' }}" }}
+            </div>
+        {{ /dates }}
+    </section>
+    {{ /events:upcoming }}
+</article>
